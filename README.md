@@ -89,12 +89,34 @@ In Microsoft Azure Blob Storage, a connection string is a string of characters t
 When you run the command with the connection string parameter set to your own connection string, DVC will be able to authenticate and access your Azure Blob Storage account to store and retrieve data.
 
 The `--local` flag is used to write the connection string to a Git-ignored config file (`.dvc/config.local`) so that sensitive user information is not leaked through Git.
-  
 
-### Add data to DVC by running `dvc add <data-file>`.
+### Add data to DVC
+Let's start tracking the data by DVC. Run the following command:
+
+```
+dvc add data.csv
+```
+
+The output of this command suggests to track the changes with git, as:
+
+```
+$ dvc add data.csv 
+
+To track the changes with git, run:
+
+        git add data.csv.dvc .gitignore
+
+To enable auto staging, run:
+
+        dvc config core.autostage true
+```
 
 ### Commit the changes
-Run `git add . && git commit -m "Add DVC tracked data"`
+Commit the changes made to the DVC repository by adding all files in the current directory to the Git by running: 
+
+```
+git add . && git commit -m "start tracking data with dvc"
+```
 
 ### Push the changes to Github 
 Run `git push`
