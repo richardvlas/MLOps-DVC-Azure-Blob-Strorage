@@ -71,10 +71,10 @@ To create an Azure Storage account, follow these steps:
 We will use the Azure storage set up in the previous step. Run the command 
 
 ```
-dvc remote add -d myremote azure://<your-container-name>/<optional-path>"
+dvc remote add -d myremote azure://<your-container-name>/<optional-path>
 ```
 
-and replace "<your-container-name>" with the name of your Blob container and "<optional-path>" with an optional path to a virtual directory in your bucket if you have any.
+and replace `<your-container-name>` with the name of your Blob container and `<optional-path>` with an optional path to a virtual directory in your bucket if you have any.
   
 To authenticate with the remote storage run the following command:
   
@@ -82,13 +82,13 @@ To authenticate with the remote storage run the following command:
 dvc remote modify --local myremote connection_string '<your-connection-string>'
 ```
 
-The command modifies the configuration of the DVC remote named "myremote" by setting the connection string to a specified value.
+The command modifies the configuration of the DVC remote named `myremote` by setting the connection string to a specified value.
 
 In Microsoft Azure Blob Storage, a connection string is a string of characters that contains authentication information, including the storage account name and a key or shared access signature token that grants access to the storage account.
 
 When you run the command with the connection string parameter set to your own connection string, DVC will be able to authenticate and access your Azure Blob Storage account to store and retrieve data.
 
-The `--local` flag is used to write the connection string to a Git-ignored config file (".dvc/config.local") so that sensitive user information is not leaked through Git.
+The `--local` flag is used to write the connection string to a Git-ignored config file (`.dvc/config.local`) so that sensitive user information is not leaked through Git.
   
 
 ### Add data to DVC by running `dvc add <data-file>`.
