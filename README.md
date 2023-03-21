@@ -39,9 +39,33 @@ get_data.py
 ### Set up DVC for versioning and managing data
 The `dvc init` command initializes a new DVC repository in your current working directory. It creates the necessary files and directories needed to manage your data and pipelines with DVC, including the `.dvc` directory which contains the configuration and metadata files used by DVC.
 
+The output will look something like the following snippet:
+
+```
+Initialized DVC repository.
+
+You can now commit the changes to git.
+
++---------------------------------------------------------------------+
+|                                                                     |
+|        DVC has enabled anonymous aggregate usage analytics.         |
+|     Read the analytics documentation (and how to opt-out) here:     |
+|             <https://dvc.org/doc/user-guide/analytics>              |
+|                                                                     |
++---------------------------------------------------------------------+
+```
 
 ### Create Azure Storage account
-TODO
+To create an Azure Storage account, follow these steps:
+
+1. Go to the Azure portal and log in with your account credentials
+2. Click on **Create a resource** and search for **Storage account** in the search bar.
+3. Select **Storage account** from the search results and click on **Create**.
+4. Follow the steps to create the account
+5. Click on **Review + create** and then **Create** to create the storage account.
+6. Create a new Blob container in your storage account
+7. Once the storage account is created, navigate to the **Access keys** tab and copy one of the connection strings.
+8. Paste the connection string into a text file and save it for later use in the DVC configuration.
 
 ### Set up a DVC remote storage for data
 We will use the Azure storage set up in the previous step. 
