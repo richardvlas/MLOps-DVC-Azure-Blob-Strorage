@@ -136,6 +136,19 @@ command in your terminal, which will transfer the data to the remote storage loc
 
 Pushing data to the remote is an essential step in the DVC workflow as it ensures that the data is backed up and accessible to other users who may be working on the project. It also enables you to easily share the data with others or deploy it to other systems for further analysis or use.
 
+### Modify the data
+TODO: finish this
+
+After running the "dvc status" command and seeing that the data file has changed, you should follow these steps:
+
+Run the "dvc add <data-file>" command to update the DVC tracking information for the changed data file. This will update the DVC cache and create a new ".dvc" file that points to the updated file.
+
+Run the "git add <data-file>.dvc" command to add the updated DVC file to the Git staging area.
+
+Run the "git commit -m 'update data file'" command to create a new Git commit with a descriptive message that summarizes the changes you made to the data file.
+
+Run the "dvc push" command to push the updated data file and the DVC tracking information to the DVC remote storage location.
+
 ## Accessing data on another machine
 
 1. Clone the GitHub repository on another machine.
