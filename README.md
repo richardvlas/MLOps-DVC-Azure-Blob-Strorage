@@ -118,16 +118,28 @@ Commit the changes made to the DVC repository by adding all files in the current
 git add . && git commit -m "start tracking data with dvc"
 ```
 
-### Push the changes to Github 
-Run `git push`
+and push the changes to Github by running 
+
+```
+git push
+```
 
 ### Push the data to the DVC remote
-Run `DVC push`
+Finally push the data that was added to the DVC repository to the DVC remote storage location.
+
+To do this, you need to run the 
+
+```
+dvc push
+```
+command in your terminal, which will transfer the data to the remote storage location specified in the DVC configuration file `config`.
+
+Pushing data to the remote is an essential step in the DVC workflow as it ensures that the data is backed up and accessible to other users who may be working on the project. It also enables you to easily share the data with others or deploy it to other systems for further analysis or use.
 
 ## Accessing data on another machine
 
 1. Clone the GitHub repository on another machine.
-2. Pull the data from the DVC remote by running `DVC pull`.
+2. Pull the data from the DVC remote by running `dvc pull`.
 
 ## Conclusion
 In this tutorial, you learned how to transfer and manage large datasets with DVC, a tool that works with Git to assist in managing code and data while helping to store the data somewhere else. By using DVC, you can avoid slowing down the pipeline in a CI/CD approach while still maintaining the ability to track changes to the data.
