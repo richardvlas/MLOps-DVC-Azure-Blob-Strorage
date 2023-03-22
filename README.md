@@ -3,6 +3,13 @@ Demonstrating MLOps workflow with DVC and Azure Blob Storage for versioning and 
 
 In this tutorial, we introduce DVC (data version control) and explain how to transfer and manage large datasets that are too big to store in Git repositories. DVC is a tool that works with Git to assist in managing code and data while helping to store the data somewhere else, but still accessible to someone who might clone the project later.
 
+## How DVC works
+Git is employed as usual to store and version code (including DVC meta-files as placeholders for data). DVC stores data and model files seamlessly in a cache outside of Git, while preserving almost the same user experience as if they were in the repo. To share and back up the data cache, DVC supports multiple remote storage platforms - any cloud (S3, Azure, Google Cloud, etc.) or on-premise network storage (via SSH, for example).
+
+
+![DVC Workflow](https://dvc.org/img/flow.gif)
+
+
 ## Why DVC is useful in CI/CD approach
 
 In the continuous integration and continuous delivery (CI/CD) approach, it's important to ensure that any changes to the code or data do not break the pipeline. Git is often used to version control the code, but storing large datasets in Git can slow down the process and create issues in the pipeline. 
